@@ -5,6 +5,11 @@ const tableBody = document.querySelector('tbody');
 
 tableHead.addEventListener('click', (e) => {
   const column = e.target.closest('th');
+
+  if (!column) {
+    return;
+  }
+
   const columnIndex = column.cellIndex;
 
   const rows = tableBody.querySelectorAll('tr');
